@@ -1,6 +1,7 @@
 import React from 'react';
 import * as ReactBootStrap from "react-bootstrap";
 import './css/Navbar.css';
+import me from './images/me.jpg';
 
 function Navbar(){
     return (
@@ -9,8 +10,8 @@ function Navbar(){
         <ReactBootStrap.Navbar.Toggle aria-controls="basic-navbar-nav" />
         <ReactBootStrap.Navbar.Collapse id="basic-navbar-nav">
             <ReactBootStrap.Nav className="ml-auto">
-                <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3" href="/download">Download</ReactBootStrap.Nav.Link>
-                <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3" href="/">Support</ReactBootStrap.Nav.Link>
+                <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3" href={me} download>Download</ReactBootStrap.Nav.Link>
+                <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3" target="_blank" href="https://www.patreon.com/dawdio">Support</ReactBootStrap.Nav.Link>
                 <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3" href="/tutorial">Tutorials</ReactBootStrap.Nav.Link>
                 <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3" href="/about">About/Contact</ReactBootStrap.Nav.Link>
             </ReactBootStrap.Nav>

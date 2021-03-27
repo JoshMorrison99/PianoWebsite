@@ -2,7 +2,6 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import About from './About';
 import Home from './Home';
-import Download from './Download';
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Tutorial from "./Tutorial";
@@ -16,7 +15,6 @@ function App() {
           <Switch>
             <Route path="/" exact component={Home}/>
             <Route path="/about" component={About}/>
-            <Route path="/download" component={Download}/>
             <Route path="/tutorial" component={Tutorial}/>
           </Switch>
         <Footer />
