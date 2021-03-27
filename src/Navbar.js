@@ -4,7 +4,7 @@ import './css/Navbar.css';
 
 function Navbar(){
     return (
-        <ReactBootStrap.Navbar className="p-0" variant="dark" bg="dark" expand="lg">
+        <ReactBootStrap.Navbar className="nav-bar p-0" variant="dark" expand="lg">
         <ReactBootStrap.Navbar.Brand className="pl-5" href="/">Dawdio</ReactBootStrap.Navbar.Brand>
         <ReactBootStrap.Navbar.Toggle aria-controls="basic-navbar-nav" />
         <ReactBootStrap.Navbar.Collapse id="basic-navbar-nav">

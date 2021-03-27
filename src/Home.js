@@ -7,11 +7,24 @@ function Home(){
     return(
         <div>
             <ReactBootStrap.Container>
-                <div className="videoContainer">
-                    <video height="720" width="1280" autoPlay loop muted id='myVideo'>
-                        <source src={backgroundVideo} type='video/mp4'/>
-                    </video>
-                </div>
+                <ReactBootStrap.Row>
+                    <ReactBootStrap.Col>
+                        <div className="downloadContainer">
+                            <h1 className="pianoHeaderText">Learn Piano Game</h1>
+                            <p className="pianoHeaderParagraph">Become a better piano player by playing along to your favourite song</p>
+                            <div className="buttonWrapper">
+                                <ReactBootStrap.Button className="downloadBtn" variant="success">Download</ReactBootStrap.Button>{' '}
+                            </div>
+                        </div>
+                    </ReactBootStrap.Col>
+                    <ReactBootStrap.Col>
+                        <div className="videoContainer">
+                            <video height="360" width="640" autoPlay loop muted id='myVideo'>
+                                <source src={backgroundVideo} type='video/mp4'/>
+                            </video>
+                        </div>
+                </ReactBootStrap.Col>
+                </ReactBootStrap.Row>
             </ReactBootStrap.Container>
         </div>
     )
