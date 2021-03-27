@@ -4,6 +4,7 @@ import About from './About';
 import Home from './Home';
 import Download from './Download';
 import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/about" component={About}/>
             <Route path="/download" component={Download}/>
           </Switch>
+        <Footer />
         </div>
       </Router>
     

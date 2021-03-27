@@ -1,16 +1,17 @@
 import React from 'react';
 import * as ReactBootStrap from "react-bootstrap";
+import './css/Navbar.css';
 
 function Navbar(){
     return (
-        <ReactBootStrap.Navbar bg="light" expand="lg">
-        <ReactBootStrap.Navbar.Brand href="#home">React-Bootstrap</ReactBootStrap.Navbar.Brand>
+        <ReactBootStrap.Navbar className="p-0" variant="dark" bg="dark" expand="lg">
+        <ReactBootStrap.Navbar.Brand className="pl-5" href="/">Dawdio</ReactBootStrap.Navbar.Brand>
         <ReactBootStrap.Navbar.Toggle aria-controls="basic-navbar-nav" />
         <ReactBootStrap.Navbar.Collapse id="basic-navbar-nav">
-            <ReactBootStrap.Nav className="mr-auto">
-            <ReactBootStrap.Nav.Link href="/">Home</ReactBootStrap.Nav.Link>
-            <ReactBootStrap.Nav.Link href="/download">Download</ReactBootStrap.Nav.Link>
-            <ReactBootStrap.Nav.Link href="/about">About</ReactBootStrap.Nav.Link>
+            <ReactBootStrap.Nav className="ml-auto">
+                <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3" href="/download">Download</ReactBootStrap.Nav.Link>
+                <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3" href="/">Support</ReactBootStrap.Nav.Link>
+                <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3" href="/about">About/Contact</ReactBootStrap.Nav.Link>
             </ReactBootStrap.Nav>
         </ReactBootStrap.Navbar.Collapse>
         </ReactBootStrap.Navbar>
