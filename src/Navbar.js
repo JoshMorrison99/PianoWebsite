@@ -11,6 +11,7 @@ function Navbar(){
             <ReactBootStrap.Nav className="ml-auto">
                 <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3" href="/download">Download</ReactBootStrap.Nav.Link>
                 <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3" href="/">Support</ReactBootStrap.Nav.Link>
+                <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3" href="/tutorial">Tutorials</ReactBootStrap.Nav.Link>
                 <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3" href="/about">About/Contact</ReactBootStrap.Nav.Link>
             </ReactBootStrap.Nav>
         </ReactBootStrap.Navbar.Collapse>
