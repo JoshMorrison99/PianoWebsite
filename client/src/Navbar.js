@@ -1,7 +1,7 @@
 import React from 'react';
 import * as ReactBootStrap from "react-bootstrap";
 import './css/Navbar.css';
-import jayz from "./images/jay-z-jetski-feat.jpg";
+import setup from "./setup/mysetup.exe";
 
 function Navbar(){
     return (
@@ -10,7 +10,7 @@ function Navbar(){
         <ReactBootStrap.Navbar.Toggle aria-controls="basic-navbar-nav" />
         <ReactBootStrap.Navbar.Collapse id="basic-navbar-nav">
             <ReactBootStrap.Nav className="ml-auto">
-                <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3" href={jayz} download>Download</ReactBootStrap.Nav.Link>
+                <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3" href={setup} download>Download</ReactBootStrap.Nav.Link>
                 <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3" href="/logs">Logs</ReactBootStrap.Nav.Link>
                 <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3" href="/tutorial">Tutorials</ReactBootStrap.Nav.Link>
                 <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3" href="/about">About/Contact</ReactBootStrap.Nav.Link>

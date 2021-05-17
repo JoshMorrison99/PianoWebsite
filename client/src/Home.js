@@ -2,7 +2,7 @@ import React from 'react';
 import backgroundVideo from '../src/videos/backgroundVideo.m4v';
 import * as ReactBootStrap from 'react-bootstrap';
 import './css/Home.css';
-import jayz from "./images/jay-z-jetski-feat.jpg";
+import setup from "./setup/mysetup.exe";
 
 function Home(){
     return(
@@ -14,7 +14,7 @@ function Home(){
                             <h1 className="pianoHeaderText">Learn Piano Game</h1>
                             <p className="pianoHeaderParagraph">Become a better piano player by playing along to your favourite song</p>
                             <div className="buttonWrapper">
-                                <ReactBootStrap.Button className="downloadBtn" variant="success" href={jayz} download>Download</ReactBootStrap.Button>{' '}
+                                <ReactBootStrap.Button className="downloadBtn" variant="success" href={setup} download>Download</ReactBootStrap.Button>{' '}
                             </div>
                         </div>
                     </ReactBootStrap.Col>
