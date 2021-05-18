@@ -2,7 +2,7 @@ import React from 'react';
 import backgroundVideo from '../src/videos/backgroundVideo.m4v';
 import * as ReactBootStrap from 'react-bootstrap';
 import './css/Home.css';
-import setup from "./setup/pianistsetup.exe";
+import setup from "./setup/mysetup.exe";
 
 function Home(){
     return(

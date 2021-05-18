@@ -1,7 +1,7 @@
 import React from 'react';
 import * as ReactBootStrap from "react-bootstrap";
 import './css/Navbar.css';
-import setup from "./setup/pianistsetup.exe";
+import setup from "./setup/mysetup.exe";
 
 function Navbar(){
     return (
