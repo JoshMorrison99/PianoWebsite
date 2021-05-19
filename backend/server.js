@@ -5,6 +5,9 @@ const path = require('path');
 
 const app = express();
 
+// Serve thee static files from the React app
+app.use(express.static(path.join(__dirname, '../client/build')))
+
 // Game Version Get Request
 app.get('/api/version_game', (req, res) => {
     fs.readFile('./game/version_game.txt', (err, data) => {
@@ -40,10 +43,9 @@ app.get('/api/download_launcher', (req, res) => {
     });
 });
 
-// Serve Static React Files
-app.use(express.static(path.join(__dirname, '../client/build')))
+// Serve Static React Files Home
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/build'))
+    res.sendFile(path.join(__dirname, '../client/build', 'index.html'))
 })
 
 
