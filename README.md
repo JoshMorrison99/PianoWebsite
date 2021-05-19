@@ -1,4 +1,4 @@
-# [Prime Pianist Website](www.primepianist.com)
+# Prime Pianist Website
 
 This website is used to download the prime pianist game I created.
 &nbsp;  ![alt text](https://i.gyazo.com/20531c8f982928287224ca4a326fc679.png) 
