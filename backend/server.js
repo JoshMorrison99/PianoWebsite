@@ -1,8 +1,6 @@
 const express = require('express');
 const fs = require('fs');
-
-
-
+const path = require('path');
 
 
 const app = express();
@@ -42,8 +40,14 @@ app.get('/api/download_launcher', (req, res) => {
     });
 });
 
+// Serve Static React Files
+app.use(express.static(path.join(__dirname, '../client/build')))
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/build'))
+})
 
-const port =  5000;
+
+const port = 5000;
 
 app.listen(port, () => {
     console.log('Server is running on port: ' + port);
