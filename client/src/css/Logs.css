@@ -1,0 +1,9 @@
+.logsContainer{
+    padding-top: 30px;
+}
+
+.card{
+    text-align: center;
+    color: azure;
+    background-color: #232323 !important;
+}
