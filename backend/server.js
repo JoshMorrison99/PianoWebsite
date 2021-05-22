@@ -1,12 +1,31 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-
+const mongoose = require('mongoose');
 
 const app = express();
 
-// Serve thee static files from the React app
-app.use(express.static(path.join(__dirname, '../client/build')))
+const port = process.env.PORT || 5000
+
+// Connect to Mongo
+let db = mongoose.connection;
+mongoose.connect('mongodb://mongo:27017/prime-pianist', { useNewUrlParser: true, useUnifiedTopology: true, } );
+
+// Check for error
+db.on('error', err => {
+    console.log("MONGO Database error occurred")
+});
+
+// Connect to database
+db.once('open', () => {
+    // Connect to MongoDB
+    console.log("Mongoose Running...");
+
+    // Server Listen on port
+    app.listen(5000);
+    console.log("Server Started...");
+
+});
 
 // Game Version Get Request
 app.get('/api/version_game', (req, res) => {
@@ -41,16 +60,4 @@ app.get('/api/download_launcher', (req, res) => {
         res.setHeader('content-type', 'application/octet-stream');
         res.send(data);
     });
-});
-
-// Serve Static React Files Home
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/build', 'index.html'))
-})
-
-
-const port = 5000;
-
-app.listen(port, () => {
-    console.log('Server is running on port: ' + port);
 });
