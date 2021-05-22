@@ -5,8 +5,7 @@ services:
     restart: always
     build: ./client
     ports:
-      - "80:80"
-      - "443:443"
+      - "3000:3000"
   backend:
     container_name: prime-pianist-backend
     restart: always
