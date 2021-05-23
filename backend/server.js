@@ -2,6 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const mongoose = require('mongoose');
+const authenticationRoutes = require('./routes/authenticationRoutes');
 
 const app = express();
 
@@ -20,6 +21,9 @@ db.on('error', err => {
 db.once('open', () => {
     // Connect to MongoDB
     console.log("Mongoose Running...");
+
+    // Middleware
+    app.use(authenticationRoutes)
 
     // Server Listen on port
     app.listen(5000);
