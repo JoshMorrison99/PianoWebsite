@@ -10,7 +10,8 @@ const port = process.env.PORT || 5000
 
 // Connect to Mongo
 let db = mongoose.connection;
-mongoose.connect('mongodb://mongo:27017/prime-pianist', { useNewUrlParser: true, useUnifiedTopology: true, } );
+//mongoose.connect('mongodb://mongo:27017/prime-pianist', { useNewUrlParser: true, useUnifiedTopology: true, } );   //PRODUCTION
+mongoose.connect('mongodb://localhost:27017/prime-pianist', { useNewUrlParser: true, useUnifiedTopology: true, } ); //DEVELOPMENT
 
 // Check for error
 db.on('error', err => {
@@ -23,7 +24,9 @@ db.once('open', () => {
     console.log("Mongoose Running...");
 
     // Middleware
+    app.use(express.json())
     app.use(authenticationRoutes)
+    
 
     // Server Listen on port
     app.listen(5000);
