@@ -13,6 +13,16 @@ const handleErrors = (err) => {
         })
     }
 
+    // incorrect username
+    if(err.message === 'incorrect username'){
+        errors.username = 'that username is not registered'
+    }
+
+    // incorrect password
+    if(err.message === 'incorrect password'){
+        errors.password = 'that password is incorrect'
+    }
+
     // duplicate error checking
     if(err.code === 11000){
         Object.keys(err.keyValue).forEach( (key) => {
@@ -49,11 +59,16 @@ module.exports.signup_post = async (req, res) => {
 }
 
 module.exports.login_post = async (req, res) => {
-    const { email, password } = req.body;
-
-    console.log("email: " + email);
+    const { username, password } = req.body;
+    console.log("username: " + username);
     console.log("password: " + password);
 
-
-    res.send('user login')
+    try{
+        const user = await User.login(username, password);
+        res.status(200).json({ username: user.username, _id: user._id })
+    }  
+    catch(err){
+        const errors = handleErrors(err);
+        res.status(400).json({errors});
+    }
 }
