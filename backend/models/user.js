@@ -21,6 +21,22 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Please enter a password'],
         minlength: [6, 'Minimum password length is 6 characters']
+    },
+    money: {
+        type: Number,
+        default: 0
+    },
+    level: {
+        type: Number,
+        default: 1
+    },
+    exp: {
+        type: Number,
+        default: 0
+    },
+    purchased: {
+        type: Boolean,
+        default: false
     }
 });
 
@@ -42,6 +58,25 @@ userSchema.statics.login = async function(username, password){
         throw Error('incorrect password')
     }
     throw Error('incorrect username')
+}
+
+// method to return user
+userSchema.statics.get_user = async function(_id){
+    const user = await this.findOne({_id});
+    if(user){
+        return user
+    }
+    throw Error('incorrect id')
+}
+
+// method to update user
+userSchema.statics.put_user = async function(_id, update){
+    mongoose.set('useFindAndModify', false); // Deprecation warning
+    const user = await this.findOneAndUpdate(_id, update);
+    if(user){
+        return user
+    }
+    throw Error('incorrect id')
 }
 
 const User = mongoose.model('user', userSchema)

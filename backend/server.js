@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const mongoose = require('mongoose');
 const authenticationRoutes = require('./routes/authenticationRoutes');
+const gameplayRoutes = require('./routes/gameplayRoutes');
 
 const app = express();
 
@@ -26,7 +27,7 @@ db.once('open', () => {
     // Middleware
     app.use(express.json())
     app.use(authenticationRoutes)
-    
+    app.use(gameplayRoutes)
 
     // Server Listen on port
     app.listen(5000);
