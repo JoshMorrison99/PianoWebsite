@@ -6,6 +6,7 @@ const app = express();
 
 const port = process.env.PORT || 5000
 
+
 // Server Listen on port
 app.listen(5000);
 console.log("Server Started...");
@@ -26,7 +27,6 @@ app.get('/api/download_game', (req, res) => {
         res.send(data);
     });
 });
-
 
 // Launcher Version Get Request
 app.get('/api/version_launcher', (req, res) => {
