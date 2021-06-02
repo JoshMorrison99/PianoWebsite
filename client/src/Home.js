@@ -3,7 +3,7 @@ import backgroundVideo from '../src/videos/backgroundVideo.m4v';
 import wallpaperVideo from '../src/videos/WallpaperFinal.m4v';
 import * as ReactBootStrap from 'react-bootstrap';
 import './css/Home.css';
-import setup from "./setup/mysetup.exe";
+import setup from "./setup/primepianistinstaller.exe";
 
 function Home(){
     return(
@@ -15,7 +15,6 @@ function Home(){
                 <h1 className="pianoHeaderTextWallpaper">Become a Better Piano Player</h1>
                 <div className="buttonWrapper">
                     <ReactBootStrap.Button className="downloadBtn" variant="outline-dark" href={setup} download>Download</ReactBootStrap.Button>{' '}
-                    <ReactBootStrap.Button className="downloadBtn" variant="outline-dark" target="a_blank" href="https://www.patreon.com/primepianist">Donate</ReactBootStrap.Button>{' '}
                 </div>
             </div>
             <ReactBootStrap.Container>

@@ -34,8 +34,14 @@ function Logs(){
                                                                                         </ReactBootStrap.ListGroup>}/>
                     </ReactBootStrap.Col>
                     <ReactBootStrap.Col>
-                        <LogsCard title="Beta" releaseData="Coming Soon" featuresAdded={<ReactBootStrap.ListGroup>
-                                                                                            <ReactBootStrap.ListGroup.Item>Coming Soon</ReactBootStrap.ListGroup.Item>
+                        <LogsCard title="Beta" releaseData="Release Date: 2021-06-02" featuresAdded={<ReactBootStrap.ListGroup>
+                                                                                            <ReactBootStrap.ListGroup.Item>Added a shop</ReactBootStrap.ListGroup.Item>
+                                                                                            <ReactBootStrap.ListGroup.Item>Many bug fixes</ReactBootStrap.ListGroup.Item>
+                                                                                            <ReactBootStrap.ListGroup.Item>Changed UI</ReactBootStrap.ListGroup.Item>
+                                                                                            <ReactBootStrap.ListGroup.Item>Added persistent saving for items bought in the shop</ReactBootStrap.ListGroup.Item>
+                                                                                            <ReactBootStrap.ListGroup.Item>Added animations</ReactBootStrap.ListGroup.Item>
+                                                                                            <ReactBootStrap.ListGroup.Item>Added 3d video background</ReactBootStrap.ListGroup.Item>
+                                                                                            <ReactBootStrap.ListGroup.Item>Removed game launcher</ReactBootStrap.ListGroup.Item>
                                                                                         </ReactBootStrap.ListGroup>}/>
                     </ReactBootStrap.Col>
                     <ReactBootStrap.Col>

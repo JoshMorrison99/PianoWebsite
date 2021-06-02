@@ -1,7 +1,7 @@
 import React from 'react';
 import * as ReactBootStrap from "react-bootstrap";
 import './css/Navbar.css';
-import setup from "./setup/mysetup.exe";
+import setup from "./setup/primepianistinstaller.exe";
 import logo from "./images/icon.png";
 
 function Navbar(){
@@ -19,7 +19,6 @@ function Navbar(){
             <ReactBootStrap.Nav className="ml-auto">
                 <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3" href={setup} download>Download</ReactBootStrap.Nav.Link>
                 <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3" href="/logs">Logs</ReactBootStrap.Nav.Link>
-                <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3" target="a_blank" href={"https://www.patreon.com/primepianist"}>Support</ReactBootStrap.Nav.Link>
                 <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3 rightlink" href="/about">About/Contact</ReactBootStrap.Nav.Link>
             </ReactBootStrap.Nav>
         </ReactBootStrap.Navbar.Collapse>
