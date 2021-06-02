@@ -1,9 +1,8 @@
 .FooterDiv{
-    background-color: #27282d;
+    background-color: transparent;
     margin-top: 10px;
-    border-top: 1px solid rgb(73, 73, 73);
 
-    position: fixed;
+    position: relative;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -15,6 +14,6 @@
 }
 
 .nav-link-footer:hover{
-    color: goldenrod;
+    color:  #dddcdc96;
     text-decoration: underline;
 }
