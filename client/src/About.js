@@ -21,7 +21,7 @@ function About(){
                              
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;If you have any ideas of features to add to the application, you can do so by contacting me on anything previously mentioned. </p>
 
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;If you want to help with the cost of server fees, any <a target="a_blank" href="https://www.patreon.com/primepianist"> dontations</a> are greatly appreciated. </p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;If you want free midi files<a target="a_blank" href="https://www.freepianotutorials.net/"> this</a> is an amazing website. </p>
 
                     </div>
                 </ReactBootStrap.Col>
