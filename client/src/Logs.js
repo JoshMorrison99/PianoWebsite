@@ -7,7 +7,7 @@ function Logs(){
     return(
         <div>
             <ReactBootStrap.Container>
-                {/* <ReactBootStrap.Row className="logsContainer">
+                {/* { <ReactBootStrap.Row className="logsContainer">
                     <ReactBootStrap.Col>
                         <div className="card">
                             <h2></h2>
@@ -26,13 +26,8 @@ function Logs(){
                             <h5></h5>
                         </div>
                     </ReactBootStrap.Col>
-                </ReactBootStrap.Row> */}
+                </ReactBootStrap.Row> } */}
                 <ReactBootStrap.Row className="logsContainer">
-                    <ReactBootStrap.Col>
-                        <LogsCard title="v1.0.0" releaseData="Coming Soon" featuresAdded={<ReactBootStrap.ListGroup>
-                                                                                            <ReactBootStrap.ListGroup.Item>Coming Soon</ReactBootStrap.ListGroup.Item>
-                                                                                        </ReactBootStrap.ListGroup>}/>
-                    </ReactBootStrap.Col>
                     <ReactBootStrap.Col>
                         <LogsCard title="Beta" releaseData="Release Date: 2021-06-02" featuresAdded={<ReactBootStrap.ListGroup>
                                                                                             <ReactBootStrap.ListGroup.Item>Added a shop</ReactBootStrap.ListGroup.Item>
@@ -93,6 +88,13 @@ function Logs(){
                                                                                                         <ReactBootStrap.ListGroup.Item>Added ability to quit the application</ReactBootStrap.ListGroup.Item>
                                                                                                         <ReactBootStrap.ListGroup.Item>Many bug fixes</ReactBootStrap.ListGroup.Item>
                                                                                                        </ReactBootStrap.ListGroup>}/>
+                    </ReactBootStrap.Col>
+                    <ReactBootStrap.Col>
+                        <LogsCard title="Start of Development" releaseData="Release Date: 2021-03-06" featuresAdded={<ReactBootStrap.ListGroup>
+                                                                                                        <ReactBootStrap.ListGroup.Item>This is the day I started development</ReactBootStrap.ListGroup.Item>
+                                                                                                        </ReactBootStrap.ListGroup>}/>
+
+
                     </ReactBootStrap.Col>
                 </ReactBootStrap.Row>
             </ReactBootStrap.Container>

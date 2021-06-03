@@ -2,6 +2,8 @@ import React from 'react';
 import backgroundVideo from '../src/videos/backgroundVideo.m4v';
 import wallpaperVideo from '../src/videos/WallpaperFinal.m4v';
 import * as ReactBootStrap from 'react-bootstrap';
+import windows from './images/windows.png';
+import mac from './images/apple.png';
 import './css/Home.css';
 import setup from "./setup/primepianistinstaller.exe";
 
@@ -14,7 +16,8 @@ function Home(){
             <div className="downloadContainerWallpaper">
                 <h1 className="pianoHeaderTextWallpaper">Become a Better Piano Player</h1>
                 <div className="buttonWrapper">
-                    <ReactBootStrap.Button className="downloadBtn" variant="outline-dark" href={setup} download>Download</ReactBootStrap.Button>{' '}
+                    <ReactBootStrap.Button className="downloadBtn" variant="outline-dark" href={setup} download> <ReactBootStrap.Image src={windows} width="30px" /> Windows Download</ReactBootStrap.Button>{' '}
+                    <ReactBootStrap.Button className="downloadBtn" variant="outline-dark" > <ReactBootStrap.Image src={mac} width="30px" /> Mac Download (Soon)</ReactBootStrap.Button>{' '}
                 </div>
             </div>
             <ReactBootStrap.Container>

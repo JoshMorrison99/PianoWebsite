@@ -16,12 +16,13 @@ function About(){
                             please email me <b>primepianist@gmail.com</b> with the error you encountered.</p>
                         
                         <p>&nbsp;&nbsp;&nbsp;&nbsp; To be in the loop on the what's coming next to the application,
-                            I will be posting on this website, as well as doing updates on <a target="a_blank" href="https://www.youtube.com/channel/UCXT-b6QjIBcMUNaEic7dTTw">YouTube</a>.
-                            Follow me on <a target="a_blank" href="https://www.instagram.com/joshmorrison99/">Instagram</a> too.  </p>
+                            I will be posting on this website, as well as doing updates on <a target="a_blank" href="https://www.youtube.com/channel/UCDj-K11fBHMZB7w31T3X08A">YouTube</a>
+                            , <a target="a_blank" href="https://twitter.com/PianistPrime">Twitter</a>, <a target="a_blank" href="https://discord.gg/xsSB6XXg">Discord</a>, 
+                            and <a target="a_blank" href="https://www.instagram.com/primepianist/">Instagram</a>.</p>
                              
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;If you have any ideas of features to add to the application, you can do so by contacting me on anything previously mentioned. </p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;If you have any ideas of features to add to the application, let me know by contacting me on anything previously mentioned. </p>
 
-                        <p>&nbsp;&nbsp;&nbsp;&nbsp;If you want free midi files<a target="a_blank" href="https://www.freepianotutorials.net/"> this</a> is an amazing website. </p>
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;If you want free midi files <a target="a_blank" href="https://www.freepianotutorials.net/">this</a> is an amazing website. </p>
 
                     </div>
                 </ReactBootStrap.Col>

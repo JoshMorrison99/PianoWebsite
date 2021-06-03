@@ -11,8 +11,10 @@ function Footer(){
         <ReactBootStrap.Container fluid className="FooterDiv">
             <div>
                 <ReactBootStrap.Nav className="ml-auto justify-content-center pt-1">
-                    <ReactBootStrap.Nav.Link className="nav-link-footer" target="a_blank" href={"https://www.youtube.com/channel/UCXT-b6QjIBcMUNaEic7dTTw"}> <ReactBootStrap.Image src={youtube} width="30"/> </ReactBootStrap.Nav.Link>
-                    <ReactBootStrap.Nav.Link className="nav-link-footer" target="a_blank" href="https://www.instagram.com/joshmorrison99/"><ReactBootStrap.Image src={instagram} width="30"/></ReactBootStrap.Nav.Link>
+                    <ReactBootStrap.Nav.Link className="nav-link-footer" target="a_blank" href={"https://www.youtube.com/channel/UCDj-K11fBHMZB7w31T3X08A"}> <ReactBootStrap.Image src={youtube} width="30"/> </ReactBootStrap.Nav.Link>
+                    <ReactBootStrap.Nav.Link className="nav-link-footer" target="a_blank" href="https://www.instagram.com/primepianist/"><ReactBootStrap.Image src={instagram} width="30"/></ReactBootStrap.Nav.Link>
+                    <ReactBootStrap.Nav.Link className="nav-link-footer" target="a_blank" href="https://discord.gg/xsSB6XXg"><ReactBootStrap.Image src={discord} width="30"/></ReactBootStrap.Nav.Link>
+                    <ReactBootStrap.Nav.Link className="nav-link-footer" target="a_blank" href="https://twitter.com/PianistPrime"><ReactBootStrap.Image src={twitter} width="30"/></ReactBootStrap.Nav.Link>
                 </ReactBootStrap.Nav>
             </div>
             <div>

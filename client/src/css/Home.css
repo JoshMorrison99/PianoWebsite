@@ -6,9 +6,10 @@ body{
     position: relative;
     right: 0;
     bottom: 0;
+    margin-bottom: 100px;
     min-width: 100%;
     min-height: 100%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 5px 15px rgba(228, 228, 228, 0.4);
   }
 
 #myWallpaper {
@@ -38,12 +39,11 @@ body{
 }
 
 .videoContainer{
-    height: 780px;
+  
 }
 
 
 .downloadContainer{
-  padding-top: 40px;
   margin: 0;
   position: absolute;
   top: 50%;
@@ -71,6 +71,7 @@ body{
   text-align: center;
   display: inline-block;
   margin: 30px 10px;
+  box-shadow: 0 5px 15px rgba(236, 236, 236, 0.4);
 }
 
 
