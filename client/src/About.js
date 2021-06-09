@@ -24,6 +24,9 @@ function About(){
 
                         <p>&nbsp;&nbsp;&nbsp;&nbsp;If you want free midi files <a target="a_blank" href="https://www.freepianotutorials.net/">this</a> is an amazing website. </p>
 
+                        <p>&nbsp;&nbsp;&nbsp;&nbsp;Any <a target="a_blank" href="https://www.patreon.com/primepianist">dontations</a> go towards server fees and improving the game. If you want to support 
+                         this project, please also support <a target="a_blank" href="https://www.buymeacoffee.com/BlNWGzcFS">FreePianoTutorials</a> for the midi files, and <a target="a_blank" href="https://www.patreon.com/melanchall">Melanchall</a> for the midi file reader.</p>
+
                     </div>
                 </ReactBootStrap.Col>
                 <ReactBootStrap.Col>
