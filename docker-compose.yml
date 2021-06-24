@@ -12,6 +12,15 @@ services:
     build: ./backend
     ports:
       - '5000:5000'
+  mongo:
+    container_name: prime-pianist-mongo
+    image: mongo
+    restart: always
+    volumes: 
+      - "./data"
+    ports:
+      - '27017:27017'
+
     
 
 

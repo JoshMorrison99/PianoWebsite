@@ -6,6 +6,8 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Tutorial from "./Tutorial";
 import Logs from "./Logs";
+import Login from "./Login";
+import Signup from "./Signup";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
             <Route path="/about" component={About}/>
             <Route path="/tutorial" component={Tutorial}/>
             <Route path="/logs" component={Logs}/>
+            <Route path="/login" exact component={Login}/>
+            <Route path="/signup" exact component={Signup}/>
           </Switch>
         <Footer />
         </div>

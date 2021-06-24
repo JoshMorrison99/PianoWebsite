@@ -17,6 +17,7 @@ function Navbar(){
         <ReactBootStrap.Navbar.Toggle aria-controls="basic-navbar-nav" />
         <ReactBootStrap.Navbar.Collapse id="basic-navbar-nav">
             <ReactBootStrap.Nav className="ml-auto">
+                <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3" href='/login'>Login</ReactBootStrap.Nav.Link>
                 <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3" href={setup} download>Download</ReactBootStrap.Nav.Link>
                 <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3" target="a_blank" href="https://www.patreon.com/primepianist">Donate</ReactBootStrap.Nav.Link>
                 <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3" href="/logs">Logs</ReactBootStrap.Nav.Link>
