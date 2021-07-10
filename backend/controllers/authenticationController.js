@@ -1,74 +1,102 @@
-const User = require('../models/User');
+const mongoose = require("mongoose");
+const User = require("../models/User");
+const bcrypt = require("bcrypt");
 
 const handleErrors = (err) => {
-    console.log(err.message, err.code);
-    let errors = { username: '', email: '', password:''};
+  console.log(err.errors);
+  const myError = [];
 
-    console.log('------------------------------------------------')
-
-    // validation error checking
-    if(err.message.includes('user validation failed')){
-        Object.values(err.errors).forEach(({properties}) => {
-            errors[properties.path] = properties.message; 
-        })
+  if (err.code === 11000) {
+    if (Object.keys(err.keyValue)[0] === "username") {
+      const usernameError = {
+        message: "Username already exists",
+        path: "username",
+      };
+      myError.push(usernameError);
     }
 
-    // incorrect username
-    if(err.message === 'incorrect username'){
-        errors.username = 'that username is not registered'
+    if (Object.keys(err.keyValue)[0] === "email") {
+      const emailError = { message: "Email alreadt exists", path: "email" };
+      myError.push(emailError);
     }
-
-    // incorrect password
-    if(err.message === 'incorrect password'){
-        errors.password = 'that password is incorrect'
-    }
-
-    // duplicate error checking
-    if(err.code === 11000){
-        Object.keys(err.keyValue).forEach( (key) => {
-            if(key === "username"){
-                errors.username = 'username already exists'
-            }
-
-            if(key === "email"){
-                errors.email = 'email already exists'
-            }
-        })
-    }
-
-    return errors;
-}
+  } else {
+    Object.values(err.errors).forEach((error) => {
+      myError.push(error.properties);
+    });
+  }
+  return myError;
+};
 
 module.exports.signup_post = async (req, res) => {
-    const { username, email, password, money, level, exp } = req.body;
-    console.log(req.body)
-    console.log("username: " + username);
-    console.log("email: " + email);
-    console.log("password: " + password);
+  console.log("yeet ", req.session);
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+  const { username, email, password, money, level, exp } = req.body;
 
-    try {
-        const user = await User.create({username, email, password, money, level, exp});
-        res.status(201).json(user);
-    }
-    catch(err){
-        const errors = handleErrors(err);
-        res.status(400).json({errors});
-    }
+  const salt = await bcrypt.genSalt();
+  const passwordHashed = await bcrypt.hash(password, salt);
 
-   
-}
+  try {
+    console.log("---------------=-=---");
+    const user = await User.create({
+      username,
+      email,
+      password: passwordHashed,
+      money,
+      level,
+      exp,
+    });
+    console.log("here");
+
+    req.session.userID = user._id;
+    console.log(req.session.id);
+    res.status(201).json(user);
+  } catch (err) {
+    console.log("---> ", err);
+    const errors = handleErrors(err);
+    res.status(400).json({ errors });
+  }
+};
 
 module.exports.login_post = async (req, res) => {
-    const { username, password } = req.body;
-    console.log("username: " + username);
-    console.log("password: " + password);
+  const { email, password } = req.body;
+  console.log("email: " + email);
+  console.log("password: " + password);
 
-    try{
-        const user = await User.login(username, password);
-        res.status(200).json({ username: user.username, _id: user._id })
-    }  
-    catch(err){
-        const errors = handleErrors(err);
-        res.status(400).json({errors});
+  try {
+    const user = await User.findOne({ email });
+    if (!user) {
+      throw Error("incorrect email");
     }
-}
+    const auth = await bcrypt.compare(password, user.password);
+    if (auth) {
+      req.session.userID = user._id;
+      res.status(200).json({ user });
+    } else {
+      throw Error("incorrect password");
+    }
+  } catch (err) {
+    console.log(err);
+    res.status(400);
+  }
+};
+
+module.exports.logout = (req, res) => {
+  console.log("session: ", req.session);
+  req.session.destroy();
+  res.end();
+};
+
+module.exports.me = async (req, res) => {
+  console.log("session -> ", req.session.userID);
+  if (!req.session.userID) {
+    res.status(400).send(null);
+    return null;
+  }
+
+  try {
+    const user = await User.findById(req.session.userID);
+    res.status(200).json(user);
+  } catch (err) {
+    console.log(err);
+  }
+};

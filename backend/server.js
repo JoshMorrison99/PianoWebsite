@@ -1,58 +1,55 @@
-const express = require('express');
-const fs = require('fs');
-const path = require('path');
-const mongoose = require('mongoose')
-const session = require('express-session')
-const MongoStore = require('connect-mongo')(session)
-const passport = require('passport')
-require('./config/passport')
-require('dotenv').config()
+const express = require("express");
+const mongoose = require("mongoose");
+const session = require("express-session");
+const MongoStore = require("connect-mongo")(session);
+require("dotenv").config();
+const cors = require("cors");
+const authenticationRoutes = require("./routes/authenticationRoutes");
 
-
-const port = process.env.PORT
 const app = express();
-app.use(passport.initialize())
-app.use(passport.session())
+
+const corsOptions = {
+  credentials: true,
+  origin: "http://localhost:3000",
+};
+
+app.use(cors(corsOptions));
 
 let db = mongoose.connection;
-//mongoose.connect('mongodb://mongo:27017/prime-pianist', { useNewUrlParser: true, useUnifiedTopology: true, } );   //PRODUCTION
-mongoose.connect(process.env.DB_STRING, { useNewUrlParser: true, useUnifiedTopology: true, } ); //DEVELOPMENT
+mongoose.connect(process.env.DB_STRING, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 // Check for error
-db.on('error', err => {
-    console.log("MONGO Database error occurred")
+db.on("error", (err) => {
+  console.log("MONGO Database error occurred");
 });
 
-app.use(express.json())
-app.use(express.urlencoded({extended: true}))
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 const sessionStore = new MongoStore({
-    mongooseConnection: db,
-    collection: 'sessions'
+  mongooseConnection: db,
+  collection: "sessions",
 });
 
-app.use(session({
-    secret: process.env.SECRET,
-    resave: false,
-    saveUninitialized: true,
+app.use(
+  session({
+    name: "ppCookie",
     store: sessionStore,
     cookie: {
-        maxAge: 1000 * 60 * 60 * 24 * 365 // 1 Year
-    }
-}))
+      httpOnly: false,
+      secure: false,
+      maxAge: 1000 * 60 * 60 * 24 * 365, // 1 Year
+    },
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 
-app.get('/api/game_version', (req, res) => {
-    fs.readFile('./Game/game_version.txt', (err, data) => {
-        res.send(data)
-    })
-})
-
-app.get('/api/game_download', (req, res) => {
-    fs.readFile('./Game/download_game.zip', (err, data) => {
-        res.setHeader('content-type', 'application/octet-stream');
-        res.send(data)
-    })
-})
+app.use("/api", authenticationRoutes);
 
 // Server Listen on port
 app.listen(5000);

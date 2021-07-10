@@ -1,31 +1,95 @@
-import React from 'react';
+import axios from "axios";
+import React from "react";
+import { useContext } from "react";
 import * as ReactBootStrap from "react-bootstrap";
-import './css/Navbar.css';
-import setup from "./setup/primepianistinstaller.exe";
+import "./css/Navbar.css";
 import logo from "./images/icon.png";
+import UserContext from "./UserContext";
 
-function Navbar(){
-    return (
-        <ReactBootStrap.Navbar className="nav-bar p-0" variant="dark" expand="lg">
-        <ReactBootStrap.Navbar.Brand className="pl-5" href="/"><img
-        alt={logo}
-        src={logo}
-        width="30"
-        height="30"
-        className="d-inline-block align-top"
-      />{' '}Prime Pianist</ReactBootStrap.Navbar.Brand>
-        <ReactBootStrap.Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <ReactBootStrap.Navbar.Collapse id="basic-navbar-nav">
-            <ReactBootStrap.Nav className="ml-auto">
-                <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3" href='/login'>Login</ReactBootStrap.Nav.Link>
-                <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3" href={setup} download>Download</ReactBootStrap.Nav.Link>
-                <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3" target="a_blank" href="https://www.patreon.com/primepianist">Donate</ReactBootStrap.Nav.Link>
-                <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3" href="/logs">Logs</ReactBootStrap.Nav.Link>
-                <ReactBootStrap.Nav.Link className="nav-link-header px-3 py-3 rightlink" href="/about">About/Contact</ReactBootStrap.Nav.Link>
-            </ReactBootStrap.Nav>
-        </ReactBootStrap.Navbar.Collapse>
-        </ReactBootStrap.Navbar>
-    );
+function Navbar() {
+  const { user, setUser } = useContext(UserContext);
+  console.log("user --> ", user);
+  const logoutUser = async () => {
+    console.log("exec");
+    try {
+      const response = await axios.get("http://localhost:5000/api/logout", {
+        withCredentials: true,
+      });
+      window.location.href = "http://localhost:3000";
+      console.log("res ", response);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  return (
+    <ReactBootStrap.Navbar className="nav-bar p-0" variant="dark" expand="lg">
+      <ReactBootStrap.Navbar.Brand className="pl-5" href="/">
+        <img
+          alt={logo}
+          src={logo}
+          width="30"
+          height="30"
+          className="d-inline-block align-top"
+        />{" "}
+        Prime Pianist
+      </ReactBootStrap.Navbar.Brand>
+      <ReactBootStrap.Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <ReactBootStrap.Navbar.Collapse id="basic-navbar-nav">
+        <ReactBootStrap.Nav className="ml-auto">
+          <ReactBootStrap.Nav.Link
+            className="nav-link-header px-3 py-3"
+            target="a_blank"
+            href="https://www.patreon.com/primepianist"
+          >
+            Donate
+          </ReactBootStrap.Nav.Link>
+          <ReactBootStrap.Nav.Link
+            className="nav-link-header px-3 py-3"
+            href="/logs"
+          >
+            Logs
+          </ReactBootStrap.Nav.Link>
+          <ReactBootStrap.Nav.Link
+            className="nav-link-header px-3 py-3"
+            href="/about"
+          >
+            About/Contact
+          </ReactBootStrap.Nav.Link>
+          {user === "" ? (
+            <>
+              <ReactBootStrap.Nav.Link
+                className="nav-link-header px-3 py-3"
+                href="/login"
+              >
+                Login
+              </ReactBootStrap.Nav.Link>
+              <ReactBootStrap.Nav.Link
+                className="nav-link-header px-3 py-3 rightlink"
+                href="/register"
+              >
+                Register
+              </ReactBootStrap.Nav.Link>
+            </>
+          ) : (
+            <>
+              <ReactBootStrap.Nav.Link
+                className="nav-link-header px-3 py-3"
+                href={"/dashboard:" + user}
+              >
+                Dashboard
+              </ReactBootStrap.Nav.Link>
+              <ReactBootStrap.Nav.Link
+                className="nav-link-header px-3 py-3 rightlink"
+                onClick={() => logoutUser()}
+              >
+                Logout
+              </ReactBootStrap.Nav.Link>
+            </>
+          )}
+        </ReactBootStrap.Nav>
+      </ReactBootStrap.Navbar.Collapse>
+    </ReactBootStrap.Navbar>
+  );
 }
 
 export default Navbar;
