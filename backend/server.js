@@ -5,12 +5,20 @@ const MongoStore = require("connect-mongo")(session);
 require("dotenv").config();
 const cors = require("cors");
 const authenticationRoutes = require("./routes/authenticationRoutes");
+const gameplayRoutes = require("./routes/gameplayRoutes");
+const downloadRoutes = require("./routes/downloadRoutes");
+const leaderboardRoutes = require("./routes/leaderboardRoutes");
 
 const app = express();
 
+console.log("--> " + process.env.NODE_ENV);
+
 const corsOptions = {
   credentials: true,
-  origin: "http://localhost:3000",
+  origin:
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:3000"
+      : process.env.PRODUCTION_URL,
 };
 
 app.use(cors(corsOptions));
@@ -50,6 +58,9 @@ app.use(
 );
 
 app.use("/api", authenticationRoutes);
+app.use("/api", gameplayRoutes);
+app.use("/api", downloadRoutes);
+app.use("/api", leaderboardRoutes);
 
 // Server Listen on port
 app.listen(5000);

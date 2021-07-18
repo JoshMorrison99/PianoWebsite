@@ -29,7 +29,12 @@ const handleErrors = (err) => {
 
 module.exports.signup_post = async (req, res) => {
   console.log("yeet ", req.session);
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:3000"
+      : process.env.PRODUCTION_URL
+  );
   const { username, email, password, money, level, exp } = req.body;
 
   const salt = await bcrypt.genSalt();
@@ -70,7 +75,7 @@ module.exports.login_post = async (req, res) => {
     const auth = await bcrypt.compare(password, user.password);
     if (auth) {
       req.session.userID = user._id;
-      res.status(200).json({ user });
+      res.status(200).json(user);
     } else {
       throw Error("incorrect password");
     }

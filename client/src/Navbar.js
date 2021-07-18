@@ -5,17 +5,27 @@ import * as ReactBootStrap from "react-bootstrap";
 import "./css/Navbar.css";
 import logo from "./images/icon.png";
 import UserContext from "./UserContext";
+import Config from "./config.json";
 
 function Navbar() {
+  console.log("--> " + Config.ENV);
   const { user, setUser } = useContext(UserContext);
   console.log("user --> ", user);
   const logoutUser = async () => {
     console.log("exec");
     try {
-      const response = await axios.get("http://localhost:5000/api/logout", {
-        withCredentials: true,
-      });
-      window.location.href = "http://localhost:3000";
+      const response = await axios.get(
+        Config.ENV === "development"
+          ? "http://localhost:5000/api/logout"
+          : Config.PRODUCTION_URL + "/api/logout",
+        {
+          withCredentials: true,
+        }
+      );
+      window.location.href =
+        Config.ENV === "development"
+          ? "http://localhost:3000"
+          : Config.PRODUCTION_URL;
       console.log("res ", response);
     } catch (err) {
       console.log(err);
@@ -38,22 +48,15 @@ function Navbar() {
         <ReactBootStrap.Nav className="ml-auto">
           <ReactBootStrap.Nav.Link
             className="nav-link-header px-3 py-3"
-            target="a_blank"
-            href="https://www.patreon.com/primepianist"
-          >
-            Donate
-          </ReactBootStrap.Nav.Link>
-          <ReactBootStrap.Nav.Link
-            className="nav-link-header px-3 py-3"
-            href="/logs"
-          >
-            Logs
-          </ReactBootStrap.Nav.Link>
-          <ReactBootStrap.Nav.Link
-            className="nav-link-header px-3 py-3"
             href="/about"
           >
             About/Contact
+          </ReactBootStrap.Nav.Link>
+          <ReactBootStrap.Nav.Link
+            className="nav-link-header px-3 py-3"
+            href="/leaderboards"
+          >
+            Leaderboards
           </ReactBootStrap.Nav.Link>
           {user === "" ? (
             <>

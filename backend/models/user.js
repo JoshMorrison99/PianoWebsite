@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { Song } = require("../models/Song").schema;
 const { isEmail } = require("validator");
 
 const userSchema = new mongoose.Schema({
@@ -31,6 +32,14 @@ const userSchema = new mongoose.Schema({
   exp: {
     type: Number,
     default: 0,
+  },
+  expToNextLevel: {
+    type: Number,
+    default: 0,
+  },
+  songs: {
+    type: [Song],
+    default: [],
   },
 });
 

@@ -13,6 +13,8 @@ import UserContext from "./UserContext";
 import { useEffect } from "react";
 import axios from "axios";
 import Dashboard from "./dashboard";
+import Leaderboards from "./Leaderboards";
+import Config from "./config.json";
 
 function App() {
   const [user, setUser] = useState("");
@@ -21,9 +23,14 @@ function App() {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/me", {
-          withCredentials: true,
-        });
+        const response = await axios.get(
+          Config.ENV === "development"
+            ? "http://localhost:5000/api/me"
+            : Config.PRODUCTION_URL + "/api/me",
+          {
+            withCredentials: true,
+          }
+        );
         setUser(response.data._id);
       } catch (err) {
         console.log(err);
@@ -45,6 +52,7 @@ function App() {
             <Route path="/login" exact component={Login} />
             <Route path="/register" exact component={Register} />
             <Route path="/dashboard:id" exact component={Dashboard} />
+            <Route path="/leaderboards" exact component={Leaderboards} />
           </Switch>
           <Footer />
         </div>

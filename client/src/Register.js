@@ -3,6 +3,7 @@ import { Form, Button } from "react-bootstrap";
 import "./css/Login.css";
 import axios from "axios";
 import UserContext from "./UserContext";
+import Config from "./config.json";
 
 function Login() {
   const { user, setUser } = useContext(UserContext);
@@ -31,7 +32,9 @@ function Login() {
   const serverValidationCheck = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/signup",
+        Config.ENV === "development"
+          ? "http://localhost:5000/api/signup"
+          : Config.PRODUCTION_URL + "/api/signup",
         {
           username: username,
           email: email,

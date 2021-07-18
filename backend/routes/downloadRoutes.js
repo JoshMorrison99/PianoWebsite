@@ -1,10 +1,10 @@
-import { Router } from "express";
-import downloadController from "../controllers/downloadController";
+const { Router } = require("express");
+const downloadController = require("../controllers/downloadController");
 
 const router = Router();
 
-router.get("/api/game_version", downloadController.downloadVersion);
+router.get("/game_version", downloadController.downloadVersion);
 
-router.get("/api/game_download", downloadController.downloadGame);
+router.get("/game_download", downloadController.downloadGame);
 
 module.exports = router;
