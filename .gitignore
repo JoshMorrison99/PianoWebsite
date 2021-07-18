@@ -13,7 +13,6 @@ yarn-error.log*
 /.changelog
 .npm/
 yarn.lock
-.env
 /data
 
 /backend/node_modules/
