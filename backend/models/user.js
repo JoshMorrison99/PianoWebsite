@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { Song } = require("../models/Song").schema;
+const { Song } = require("./Song").schema;
 const { isEmail } = require("validator");
 
 const userSchema = new mongoose.Schema({
