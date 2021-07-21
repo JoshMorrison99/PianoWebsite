@@ -1,12 +1,11 @@
-.pictureDiv{
-    margin-top: 100px;
+.pictureDiv {
+  margin-top: 100px;
 }
 
-.pic{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.pic {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.textBox{
-    margin-top: 100px;
-    color: whitesmoke;
+.textBox {
+  margin-top: 100px;
 }

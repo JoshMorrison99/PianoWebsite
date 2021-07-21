@@ -1,9 +1,7 @@
-.logsContainer{
-    padding-top: 30px;
+.logsContainer {
+  padding-top: 30px;
 }
 
-.card{
-    text-align: center;
-    color: azure;
-    background-color: #232323 !important;
+.card {
+  text-align: center;
 }

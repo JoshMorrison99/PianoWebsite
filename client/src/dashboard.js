@@ -42,11 +42,11 @@ const Dashboard = () => {
     <Container className="mt-4">
       <Row>
         <Col>
-          <h1 className="text mb-0">{username}</h1>
-          <h4 className="text">{"Level " + level}</h4>
+          <h1 className=".text-dark mb-0">{username}</h1>
+          <h4 className=".text-dark">{"Level " + level}</h4>
         </Col>
         <Col>
-          <h4 className="text">{"Total Notes Hit " + money}</h4>
+          <h4 className=".text-dark">{"Total Notes Hit " + money}</h4>
         </Col>
       </Row>
       <Row>

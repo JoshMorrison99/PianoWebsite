@@ -31,7 +31,7 @@ function Logs() {
           <ReactBootStrap.Col>
             <LogsCard
               title="Beta"
-              releaseData="Release Date: 2021-07-18"
+              releaseData="Release Date: 2021-07-27"
               featuresAdded={
                 <ReactBootStrap.ListGroup>
                   <ReactBootStrap.ListGroup.Item>

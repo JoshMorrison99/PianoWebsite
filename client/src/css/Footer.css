@@ -1,19 +1,17 @@
 .FooterDiv {
-  background-color: transparent;
-  margin-top: 10px;
-
-  position: relative;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+  position: fixed;
+  height: 50px;
+  bottom: 0px;
+  background: #343a40 !important;
+  left: 0px;
+  right: 0px;
+  margin-bottom: 0px;
 }
 
 .nav-link-footer {
-  color: honeydew;
   font-family: "Nunito", sans-serif;
 }
 
 .nav-link-footer:hover {
-  color: #dddcdc96;
   text-decoration: underline;
 }

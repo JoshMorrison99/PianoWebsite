@@ -49,7 +49,10 @@ function Login() {
       console.log(user);
       setUser(response.data._id);
       console.log(user);
-      //window.location.href = "http://localhost:3000";
+      window.location.href =
+        Config.ENV === "development"
+          ? "http://localhost:3000"
+          : Config.PRODUCTION_URL;
       console.log(response.data);
     } catch (err) {
       console.log(err);

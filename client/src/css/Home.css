@@ -1,84 +1,21 @@
-body {
-  background-color: black !important;
-}
-
-#myVideo {
-  position: relative;
-  right: 0;
-  bottom: 0;
-  margin-bottom: 100px;
-  min-width: 100%;
-  min-height: 100%;
-  box-shadow: 0 5px 15px rgba(228, 228, 228, 0.4);
-}
-
-#myWallpaper {
-  position: relative;
-  right: 0;
-  bottom: 0;
-  top: -200px;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: -100;
-  height: auto;
-  background-size: cover;
-}
-
 .pianoHeaderText {
-  font-size: 2.875rem;
   font-family: "Nunito", sans-serif;
-  color: azure;
 }
 
 .pianoHeaderTextWallpaper {
-  font-size: 2.575rem;
   font-family: "Nunito", sans-serif;
-  color: azure;
-}
-
-.pianoHeaderParagraph {
-  font-weight: 300 !important;
-  font-family: "Nunito", sans-serif;
-  font-size: 1.7rem;
-  color: rgb(119, 119, 119);
-}
-
-.videoContainer {
-}
-
-.downloadContainer {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  padding-right: 50px;
-}
-
-.downloadContainerWallpaper {
-  padding-top: 0px;
-  margin: 0;
-  position: absolute;
-  top: 45%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  margin-right: 200px;
-  margin-left: 200px;
 }
 
 .downloadBtn {
   width: 250px;
   height: 50px;
   font-family: "Nunito", sans-serif;
-  color: azure !important;
   text-align: center;
   display: inline-block;
   margin: 30px 10px;
-  box-shadow: 0 5px 15px rgba(236, 236, 236, 0.4);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.buttonWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.vid {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
