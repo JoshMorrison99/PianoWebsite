@@ -15,6 +15,7 @@ import axios from "axios";
 import Dashboard from "./dashboard";
 import Leaderboards from "./Leaderboards";
 import Config from "./config.json";
+import Gym from "./Gym.js";
 
 function App() {
   const [user, setUser] = useState("");
@@ -53,6 +54,7 @@ function App() {
             <Route path="/register" exact component={Register} />
             <Route path="/dashboard:id" exact component={Dashboard} />
             <Route path="/leaderboards" exact component={Leaderboards} />
+            <Route path="/gym" exact component={Gym} />
           </Switch>
           <Footer />
         </div>
