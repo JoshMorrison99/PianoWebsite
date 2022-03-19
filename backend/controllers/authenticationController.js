@@ -94,7 +94,7 @@ module.exports.logout = (req, res) => {
 module.exports.me = async (req, res) => {
   console.log("session -> ", req.session.userID);
   if (!req.session.userID) {
-    res.status(200).send("Not logged in");
+    res.status(400).send(null);
     return null;
   }
 
