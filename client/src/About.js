@@ -5,6 +5,8 @@ import "./css/About.css";
 import Config from "./config.json";
 
 function About() {
+  console.log(Config.ENV === "development");
+  console.log(Config.ENV === "production");
   return (
     <ReactBootStrap.Container>
       <ReactBootStrap.Row>

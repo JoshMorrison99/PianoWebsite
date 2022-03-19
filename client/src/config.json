@@ -1,4 +1,4 @@
 {
-  "ENV": "development",
+  "ENV": "production",
   "PRODUCTION_URL": "https://primepianist.com"
 }

@@ -19,7 +19,6 @@ import Gym from "./Gym.js";
 
 function App() {
   const [user, setUser] = useState("");
-  console.log("-------------------> ", user);
 
   useEffect(() => {
     const getUser = async () => {

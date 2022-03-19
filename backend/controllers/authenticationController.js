@@ -16,7 +16,7 @@ const handleErrors = (err) => {
     }
 
     if (Object.keys(err.keyValue)[0] === "email") {
-      const emailError = { message: "Email alreadt exists", path: "email" };
+      const emailError = { message: "Email already exists", path: "email" };
       myError.push(emailError);
     }
   } else {
@@ -94,7 +94,7 @@ module.exports.logout = (req, res) => {
 module.exports.me = async (req, res) => {
   console.log("session -> ", req.session.userID);
   if (!req.session.userID) {
-    res.status(400).send(null);
+    res.status(200).send("Not logged in");
     return null;
   }
 
